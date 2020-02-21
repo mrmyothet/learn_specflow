@@ -40,3 +40,15 @@ Scenario: Elf race characters get additional 20 damage resistance another data t
 		| Resistance | 0    |
 	When I take 40 damage
 	Then My health should now be 80
+
+Scenario: Healers restore all health
+	Given My character class is set to Healer
+	When I take 40 damage
+		And Cast a healing spell
+	Then My health should now be 100
+
+Scenario: Warriors restore some health after cast a healing spell
+	Given My character class is set to Warrior
+	When I take 40 damage
+	And Cast a healing spell
+	Then My health should now be 70
