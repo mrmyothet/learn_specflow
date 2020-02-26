@@ -52,3 +52,11 @@ Scenario: Warriors restore some health after cast a healing spell
 	When I take 40 damage
 	And Cast a healing spell
 	Then My health should now be 70
+
+Scenario: Total Magical Power
+	Given I have the following magical items 
+	| item   | value | power |
+	| Ring   | 200   | 100   |
+	| Amulet | 400   | 200   |
+	| Gloves | 100   | 400   |
+	Then My total magical power should be 700
