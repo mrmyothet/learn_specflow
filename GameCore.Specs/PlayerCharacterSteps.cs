@@ -3,6 +3,8 @@ using System.Linq;
 using TechTalk.SpecFlow;
 using Xunit;
 using TechTalk.SpecFlow.Assist;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace GameCore.Specs
 {
@@ -71,10 +73,18 @@ namespace GameCore.Specs
         [Given(@"I have the following magical items")]
         public void GivenIHaveTheFollowingMagicalItems(Table table)
         {
-            //strongly-typed multi-column step table data
-            var items = table.CreateSet<MagicalItem>();
-            _player.MagicalItems.AddRange(items);
-
+            // dynamic multi-column step table data
+            IEnumerable<dynamic> items = table.CreateDynamicSet();
+            
+            foreach (var item in items)
+            {
+                _player.MagicalItems.Add(new MagicalItem
+                {
+                    Name = item.name,
+                    Value = item.value, 
+                    Power = item.power
+                });
+            }
         }
 
         [Then(@"My total magical power should be (.*)")]
