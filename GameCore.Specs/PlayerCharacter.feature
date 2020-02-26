@@ -27,17 +27,17 @@ Scenario: Elf race characters get additional 20 damage resistance
 
 Scenario: Elf race characters get additional 20 damage resistance using data table
 		And I have the following attributes
-		| attribute  | value |
-		| Race       | Elf   |
-		| Resistance | 10    |
+		| attribute        | value |
+		| Race             | Elf   |
+		| DamageResistance | 10    |
 	When I take 40 damage
 	Then My health should now be 90
 
 Scenario: Elf race characters get additional 20 damage resistance another data table
 		And I have the following attributes
-		| attribute  | value |
-		| Race       | Elf   |
-		| Resistance | 0    |
+		| attribute        | value |
+		| Race             | Elf   |
+		| DamageResistance | 0     |
 	When I take 40 damage
 	Then My health should now be 80
 

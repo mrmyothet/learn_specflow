@@ -256,7 +256,7 @@ this.FeatureBackground();
                             "Race",
                             "Elf"});
                 table1.AddRow(new string[] {
-                            "Resistance",
+                            "DamageResistance",
                             "10"});
 #line 29
   testRunner.And("I have the following attributes", ((string)(null)), table1, "And ");
@@ -308,7 +308,7 @@ this.FeatureBackground();
                             "Race",
                             "Elf"});
                 table2.AddRow(new string[] {
-                            "Resistance",
+                            "DamageResistance",
                             "0"});
 #line 37
   testRunner.And("I have the following attributes", ((string)(null)), table2, "And ");

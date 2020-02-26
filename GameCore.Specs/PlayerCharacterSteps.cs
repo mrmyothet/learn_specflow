@@ -50,13 +50,10 @@ namespace GameCore.Specs
         [Given(@"I have the following attributes")]
         public void GivenIHaveTheFollowingAttributes(Table table)
         {
-            //_player.Race = table.Rows.First(row => row["attribute"] == "Race")["value"];
-            //_player.DamageResistance =int.Parse(table.Rows.First(row => row["attribute"] == "Resistance")["value"]);
-
-            var attributes = table.CreateInstance<PlayerAttributes>();
+            dynamic attributes = table.CreateDynamicInstance();
 
             _player.Race = attributes.Race;
-            _player.DamageResistance = attributes.Resistance;
+            _player.DamageResistance = attributes.DamageResistance;
         }
 
         [Given(@"My character class is set to (.*)")]
