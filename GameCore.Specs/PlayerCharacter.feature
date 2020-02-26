@@ -55,7 +55,7 @@ Scenario: Warriors restore some health after cast a healing spell
 
 Scenario: Total Magical Power
 	Given I have the following magical items 
-	| item   | value | power |
+	| name   | value | power |
 	| Ring   | 200   | 100   |
 	| Amulet | 400   | 200   |
 	| Gloves | 100   | 400   |
